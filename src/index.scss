@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
+
+@import "./components/Header/header.scss";
+@import "./components/Order-information/order-information.scss";
+@import "./components/Order-list/order-list.scss";
+@import "./components/Order-list/order-list-item.scss";
+@import "./components/Footer/footer.scss";
+
+
+* {
+  margin: 0;
+  padding: 15px 15px;
+  box-sizing: border-box;
+}
+
+:root {
+  background: #fff;
+  color: #222;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+li {
+  list-style-type: none;
+}

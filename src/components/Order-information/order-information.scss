@@ -1,0 +1,15 @@
+.order-inform {
+    display: grid;
+    grid-template-areas: 
+    'details  adress'
+    'receipt terms';
+}
+.receipt {
+    grid-area: receipt;
+    position: relative;
+    .receipt-li{
+        display: block;
+        line-height: 1;
+    }
+}
+
