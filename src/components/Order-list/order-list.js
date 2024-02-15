@@ -9,12 +9,14 @@ const OrderList = ({ data }) => {
   return (
     <table className="order-list">
       <thead className="order-list-header">
-        <td className="list-group-item-label"> Name</td>
-        <td className="list-group-item-artwork"> Manufacturer</td>
-        <td className="list-group-item-quantity"> Quantity</td>
-        <td className="list-group-item-delivery"> Delivery date</td>
+        <tr>
+          <td className="list-group-item-label">Name</td>
+          <td className="list-group-item-artwork">Manufacturer</td>
+          <td className="list-group-item-quantity">Quantity</td>
+          <td className="list-group-item-delivery">Delivery date</td>
+        </tr>
       </thead>
-      <tbody> {elemets}</tbody>
+      <tbody>{elemets}</tbody>
     </table>
   );
 };
