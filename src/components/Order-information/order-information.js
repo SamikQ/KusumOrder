@@ -1,9 +1,11 @@
 const OrderInform = () => {
+  const orderDate = new Date().toISOString().slice(0,10).split('-').reverse().join('.');
+
   return (
     <div className="order-inform">
       <ul className="order-inform__details details">
         <li className="details-number">Purchase order No.: 283/24/2024</li>
-        <li className="details-date">Dated: 13/02/2024</li>
+        <li className="details-date">Dated: {orderDate}</li>
       </ul>
       <ul className="order-inform__receipt receipt">
         <li className="receipt-li">Ordered to: "PrintPharm LLC"</li>

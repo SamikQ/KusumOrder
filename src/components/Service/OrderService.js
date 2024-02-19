@@ -1,10 +1,10 @@
 export default class OrderService {
-  getResource = async () => {
-    let res = await fetch("../Data/data.json");
+  getResource = async (url) => {
+    let res = await fetch(url);
 
     if (!res.ok) {
       throw new Error(
-        `Couldnt fetch ${"../Data/data.json"}, status ${res.status}`
+        `Couldnt fetch ${url}, status ${res.status}`
       );
     }
     return res.json();

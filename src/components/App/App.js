@@ -4,12 +4,13 @@ import Header from "../Header/header";
 import Footer from "../Footer/footer";
 import OrderInform from "../Order-information/order-information";
 import OrderList from "../Order-list/order-list";
+import products from "../Data/data.json"
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: products,
     };
   }
 

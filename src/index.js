@@ -6,7 +6,7 @@ import OrderService from "./components/Service/OrderService";
 
 const orderService = new OrderService();
 
-orderService.getProducts().then(res => res.data.results.forEach(item => console.log(item.name))).catch(error => console.error('Помилка при отриманні продуктів:', error));
+orderService.getAllProducts().then(res => res.data.results.forEach(item => console.log(item.name))).catch(error => console.error('Помилка при отриманні продуктів:', error));
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

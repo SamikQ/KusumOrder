@@ -2,7 +2,7 @@ import OrderListItem from "../Order-list-item/order-list-item";
 
 const OrderList = ({ data }) => {
   const elemets = data.map((item) => {
-    const { id, ...itemProps } = item;
+    const { id, ...itemProps} = item;
     return <OrderListItem key={id} {...itemProps} />;
   });
 
@@ -10,10 +10,10 @@ const OrderList = ({ data }) => {
     <table className="order-list">
       <thead className="order-list-header">
         <tr>
-          <td className="list-group-item-label">Name</td>
-          <td className="list-group-item-artwork">Manufacturer</td>
-          <td className="list-group-item-quantity">Quantity</td>
-          <td className="list-group-item-delivery">Delivery date</td>
+          <th className="list-group-item-label">Name</th>
+          <th className="list-group-item-artwork">ArtWork</th>
+          <th className="list-group-item-quantity">Quantity</th>
+          <th className="list-group-item-delivery">Delivery date</th>
         </tr>
       </thead>
       <tbody>{elemets}</tbody>
