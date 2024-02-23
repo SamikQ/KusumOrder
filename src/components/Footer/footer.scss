@@ -1,7 +1,13 @@
 .footer {
-    text-align: center;
- .footer-contacts {
-    display: flex;
-    justify-content: space-around;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+   background-color: #ffffff; /* Додайте кольорову схему за необхідністю */
+   text-align: center;
+   
+   .footer-contacts {
+     display: flex;
+     justify-content: space-around;
+     margin: 25px 0;
+   }
  }
-}

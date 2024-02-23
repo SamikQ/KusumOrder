@@ -1,10 +1,11 @@
 import { Component } from "react";
 import "./App.css";
-import Header from "../Header/header";
-import Footer from "../Footer/footer";
-import OrderInform from "../Order-information/order-information";
-import OrderList from "../Order-list/order-list";
-import products from "../Data/data.json"
+import Header from "../header/header";
+import Footer from "../footer/footer";
+import OrderInform from "../order-information/order-information";
+import OrderList from "../order-list/order-list";
+import products from "../data/data.json"
+import OrderApproval from "../order-approval/OrderApproval";
 
 class App extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class App extends Component {
         <Header />
         <OrderInform />
         <OrderList data={data} />
+        <OrderApproval/>
         <Footer />
       </div>
     );

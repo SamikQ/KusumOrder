@@ -1,18 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap");
 
-@import "./components/Header/header.scss";
-@import "./components/Order-information/order-information.scss";
-@import "./components/Order-list/order-list.scss";
-@import "./components/Order-list-item/order-list-item.scss";
-@import "./components/Footer/footer.scss";
+@import "./components/header/header.scss";
+@import "./components/order-information/order-information.scss";
+@import "./components/order-list/order-list.scss";
+@import "./components/order-list-item/order-list-item.scss";
+@import "./components/order-approval/orderApproval.scss";
+@import "./components/footer/footer.scss";
 
 
 * {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 15px 15px;
   box-sizing: border-box;
 }
+
 
 :root {
   background: #fff;
@@ -24,3 +25,7 @@
 li {
   list-style-type: none;
 }
+
+
+
+

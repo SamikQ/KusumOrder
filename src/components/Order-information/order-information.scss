@@ -1,15 +1,20 @@
 .order-inform {
-    display: grid;
-    grid-template-areas: 
-    'details  adress'
-    'receipt terms';
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  span {
+    display: block;
+    margin: 1%;
+  }
+  div {
+    margin: 0;
+  }
+  .order__details-list {
+    min-height: 65px;
+    border: 1px outset black;
+    margin: 0.5px;
+  }
+  .oder__details-list-second {
+    min-height: 147px;
+  }
 }
-.receipt {
-    grid-area: receipt;
-    position: relative;
-    .receipt-li{
-        display: block;
-        line-height: 1;
-    }
-}
-
