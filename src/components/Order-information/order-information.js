@@ -10,7 +10,7 @@ const OrderInform = () => {
     <div className="order-inform">
       <div className="order__details">
         <div className="order__details-list">
-          <span className="order__detail-li">Purchase order No.: 283/24/2024</span>
+          <span className="order__detail-li">Purchase order No.: 287/24/2024</span>
           <span className="order__detail-li">Dated: {orderDate}</span>
         </div>
         <div className="order__details-list oder__details-list-second">

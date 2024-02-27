@@ -1,10 +1,10 @@
 import { Component } from "react";
-import "./App.css";
+import "./App.scss";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import OrderInform from "../order-information/order-information";
 import OrderList from "../order-list/order-list";
-import products from "../data/data.json"
+import products from "../data/data.json";
 import OrderApproval from "../order-approval/OrderApproval";
 
 class App extends Component {
@@ -18,11 +18,13 @@ class App extends Component {
   render() {
     const { data } = this.state;
     return (
-      <div>
+      <div className="wrapper">
         <Header />
-        <OrderInform />
-        <OrderList data={data} />
-        <OrderApproval/>
+        <div className="page">
+          <OrderInform />
+          <OrderList data={data} />
+          <OrderApproval />
+        </div>
         <Footer />
       </div>
     );

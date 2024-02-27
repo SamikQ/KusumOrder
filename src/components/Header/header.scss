@@ -1,8 +1,11 @@
 .header {
+  width: 100vh;
+  padding: 5px;
   background-image: url(./img/decor-header.png);
   background-repeat: repeat-x;
   background-position: center;
   .header-logo {
+    margin-top: 10px;
     height: 83px;
   }
 }
