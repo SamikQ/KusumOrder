@@ -1,9 +1,26 @@
+import { Component } from "react";
 import OrderListItem from "../order-list-item/order-list-item";
 
-const OrderList = ({ data }) => {
+class OrderList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: "",
+      month: "",
+    };
+  }
+
+  render() {
+    const { data } = this.props;
+    return <OrderListView data={data} />;
+  }
+}
+
+const OrderListView = ({ data }) => {
   let counter = 1; // Лічильник для відстеження реальних елементів
   const elements = data.map((item) => {
-    if (item.mar2024 > 0) { // Перевірка на наявність значення
+    if (item.apr2024 > 0) {
+      // Перевірка на наявність значення
       const { id, ...itemProps } = item;
       return <OrderListItem key={id} index={counter++} {...itemProps} />; // Використовуємо лічильник тут
     }

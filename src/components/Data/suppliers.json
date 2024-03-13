@@ -1,0 +1,40 @@
+[
+    {
+        "id": "s1",
+        "companyName": "ТОВ ПРІНТФАРМ",
+        "representative": "Олексій Пастухов",
+        "contact": "+38098-017-88-71",
+        "email": "a.b.pastukhov@gmail.com",
+        "contractNo": "07/20-ГФ-1/07"
+    },
+    {
+        "id": "s2",
+        "companyName": "ПАТ ТЕХНОЛОГІЯ",
+        "representative": "Олександр Бурий",
+        "contact": "+38067-543-31-76",
+        "email": "a.buryy@technologia.com.ua",
+        "contractNo": "199/240"
+    },
+    {
+        "id": "s3",
+        "companyName": "ТОВ Луцьккартон",
+        "representative": "Дмитро Шульган",
+        "contact": "+38067-120-05-04",
+        "email": "dimashulgan@karton.lutsk.ua"
+    },
+    {
+        "id": "s4",
+        "companyName": "ПРАТ ФІРМА ЕЛІПС",
+        "representative": "Юрій Подлубний",
+        "contact": "+38050-322-18-74",
+        "email": "sales@crystalglass.com.ua",
+        "contractNo": "КГ 4684 від 30.09.2014"
+    },
+    {
+        "id": "s5",
+        "companyName": "ТОВ Агротрейдхім",
+        "representative": "Олена Удод",
+        "contact": "+38067-474-71-64",
+        "email": "ath.supply1@gmail.com"
+    }
+]

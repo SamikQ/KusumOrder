@@ -1,10 +1,538 @@
 [
     {
         "id": 1,
-        "product": "Фарестон® таблетки по 60 мг №60",
+        "product": "Аброл SR капс 75мг",
         "type": "insert",
-        "artwork": "FNTO-02",
-        "mar2024": 1000,
-        "deliveryBy": "08 Mar 2024"
+        "artwork": "ALSRC-01"
+    },
+    {
+        "id": 2,
+        "product": "Аброл сироп 15мг/5мл",
+        "type": "insert",
+        "artwork": "AL-02"
+    },
+    {
+        "id": 3,
+        "product": "Аброл сироп 15мг/5мл (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 4,
+        "product": "Аброл сироп 15мг/5мл (Узбекистан)",
+        "type": "insert"
+    },
+    {
+        "id": 5,
+        "product": "Аброл сироп 30мг/5мл",
+        "type": "insert",
+        "artwork": "AO-02"
+    },
+    {
+        "id": 6,
+        "product": "Аброл сироп 30мг/5мл (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 7,
+        "product": "Аброл сироп 15мг/5мл (Узбекистан)",
+        "type": "insert"
+    },
+    {
+        "id": 8,
+        "product": "Аброл таб 30мг",
+        "type": "insert",
+        "artwork": "ALT_01"
+    },
+    {
+        "id": 9,
+        "product": "Аброл таб 30мг (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 10,
+        "product": "Аброл розчин 15мг/2мл",
+        "type": "insert",
+        "artwork": "ABLI-01"
+    },
+    {
+        "id": 11,
+        "product": "Баратон таб 5мг 10мг",
+        "type": "insert",
+        "artwork": "BNT-01",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 31200
+    },
+    {
+        "id": 12,
+        "product": "L-Цет сироп 2,5мг/5мл (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 13,
+        "product": "L-Цет сироп 2,5мг/5мл",
+        "type": "insert",
+        "artwork": "LCT-02",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 54600
+    },
+    {
+        "id": 14,
+        "product": "L-Цет сироп 2,5мг/5мл (Молдова)",
+        "type": "insert",
+        "artwork": "LCTMD-01"
+    },
+    {
+        "id": 15,
+        "product": "Воксид таб 0,2мг 0,3мг",
+        "type": "insert",
+        "artwork": "VD-03"
+    },
+    {
+        "id": 16,
+        "product": "Газоспазам таб ",
+        "type": "insert",
+        "artwork": "GZM-02"
+    },
+    {
+        "id": 17,
+        "product": "Глимакс таб 2мг 3мг 4мг",
+        "type": "insert",
+        "artwork": "GX_01"
+    },
+    {
+        "id": 18,
+        "product": "Глютазон таб",
+        "type": "insert",
+        "artwork": "GN-01"
+    },
+    {
+        "id": 19,
+        "product": "Домрид таб 10мг",
+        "type": "insert",
+        "artwork": "DD-01"
+    },
+    {
+        "id": 20,
+        "product": "Домрид таб 10мг (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 21,
+        "product": "Домрид таб 10мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 22,
+        "product": "Домрид таб 10мг (Узбекістан)",
+        "type": "insert"
+    },
+    {
+        "id": 23,
+        "product": "Домрид SR таб 30мг ",
+        "type": "insert",
+        "artwork": "DS-01",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 30000
+    },
+    {
+        "id": 24,
+        "product": "Домрид сусп 1мг/мл",
+        "type": "insert",
+        "artwork": "DSU-04",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 43800
+    },
+    {
+        "id": 25,
+        "product": "Домрид сусп 1мг/мл (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 26,
+        "product": "Домрид сусп 1мг/мл (Узбекистан)",
+        "type": "insert"
+    },
+    {
+        "id": 27,
+        "product": "Дуглимакс таб ",
+        "type": "insert",
+        "artwork": "DMX-01",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 14200
+    },
+    {
+        "id": 28,
+        "product": "Золопент таб 20мг ",
+        "type": "insert",
+        "artwork": "SHV-04",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 72600
+    },
+    {
+        "id": 29,
+        "product": "Золопент таб 40мг ",
+        "type": "insert",
+        "artwork": "ZT-04",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 73000
+    },
+    {
+        "id": 30,
+        "product": "Золопент таб 40мг (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 31,
+        "product": "Золопент таб 40мг (Узбекистан)",
+        "type": "insert"
+    },
+    {
+        "id": 32,
+        "product": "Золопент таб 40мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 33,
+        "product": "Клосарт таб 25мг 50мг 100мг",
+        "type": "insert",
+        "artwork": "КТ-03",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 36000
+    },
+    {
+        "id": 34,
+        "product": "Клосарт таб 25мг 50мг 100мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 35,
+        "product": "Клосарт таб 25мг 50мг 100мг (Молдова)",
+        "type": "insert",
+        "artwork": "KTMD-01"
+    },
+    {
+        "id": 36,
+        "product": "Колікід сусп 40мг/мл",
+        "type": "insert",
+        "artwork": "CDS-02"
+    },
+    {
+        "id": 37,
+        "product": "Колікід сусп 40мг/мл (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 38,
+        "product": "Колікід таб 125мг ",
+        "type": "insert",
+        "artwork": "CDT-01",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 19000
+    },
+    {
+        "id": 39,
+        "product": "Колікід таб 125мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 40,
+        "product": "Колікід таб 125мг (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 41,
+        "product": "Лоспирин таб 75мг",
+        "type": "insert",
+        "artwork": "LSN-02"
+    },
+    {
+        "id": 42,
+        "product": "Метамін таб 500мг 850мг 1000мг ",
+        "type": "insert",
+        "artwork": "MN-03",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 37200
+    },
+    {
+        "id": 43,
+        "product": "Метамін SR таб 500мг ",
+        "type": "insert",
+        "artwork": "MSU-02",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 13000
+    },
+    {
+        "id": 44,
+        "product": "Піарон таб 500мг",
+        "type": "insert",
+        "artwork": "PN-02"
+    },
+    {
+        "id": 45,
+        "product": "Платогріл таб 75мг",
+        "type": "insert",
+        "artwork": "PL-02",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 51100
+    },
+    {
+        "id": 46,
+        "product": "Альбела таб 400мг",
+        "type": "insert",
+        "artwork": "ALBAT-02"
+    },
+    {
+        "id": 47,
+        "product": "Альбела таб 400мг (Молдова)",
+        "type": "insert",
+        "artwork": "MAA-01"
+    },
+    {
+        "id": 48,
+        "product": "Альбела таб 400мг (Узбекистан)",
+        "type": "insert"
+    },
+    {
+        "id": 49,
+        "product": "Альбела таб 400мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 50,
+        "product": "Діакобал таб 500мкг",
+        "type": "insert",
+        "artwork": "DKL-02"
+    },
+    {
+        "id": 51,
+        "product": "Піарон сусп 120мг/5мл",
+        "type": "insert",
+        "artwork": "PNS-02"
+    },
+    {
+        "id": 52,
+        "product": "Пірантел сусп 250мг/5мл",
+        "type": "insert",
+        "artwork": "PRL-02"
+    },
+    {
+        "id": 53,
+        "product": "Семлопін таб 2,5мг 5мг ",
+        "type": "insert",
+        "artwork": "SN-03",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 36000
+    },
+    {
+        "id": 54,
+        "product": "Семлопін таб 2,5мг 5мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 55,
+        "product": "Семлопін таб 2,5мг 5мг (Молдова)",
+        "type": "insert",
+        "artwork": "SNMD-01"
+    },
+    {
+        "id": 56,
+        "product": "Укрлів сусп 250мг/5мл ",
+        "type": "insert",
+        "artwork": "U-04"
+    },
+    {
+        "id": 57,
+        "product": "Укрлів сусп 250мг/5мл 200мл (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 58,
+        "product": "Укрлів таб 250мг ",
+        "type": "insert",
+        "artwork": "UL-01"
+    },
+    {
+        "id": 59,
+        "product": "Укрлів таб 250мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 60,
+        "product": "Укрлів таб 250мг (Молдова)",
+        "type": "insert",
+        "artwork": "UVTMD-01"
+    },
+    {
+        "id": 61,
+        "product": "Укрлів таб 250мг (Узбекистан)",
+        "type": "insert"
+    },
+    {
+        "id": 62,
+        "product": "Укрлів таб 500мг ",
+        "type": "insert",
+        "artwork": "UV-01",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 7800
+    },
+    {
+        "id": 63,
+        "product": "Укрлів таб 500мг (Молдова)",
+        "type": "insert",
+        "artwork": "ULMDT-01"
+    },
+    {
+        "id": 64,
+        "product": "Етсет таб 10мг 20мг 40мг 80мг ",
+        "type": "insert",
+        "artwork": "АТ-03",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 16500
+    },
+    {
+        "id": 65,
+        "product": "Етсет таб 10мг 20мг 40мг 80мг (Молдова)",
+        "type": "insert"
+    },
+    {
+        "id": 66,
+        "product": "Етсет таб 10мг 20мг 40мг 80мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 67,
+        "product": "Хіпотел таб 20мг 40мг 80мг ",
+        "type": "insert",
+        "artwork": "H-02",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 38500
+    },
+    {
+        "id": 68,
+        "product": "Хіпотел таб 20мг 40мг 80мг (Казахстан)",
+        "type": "insert"
+    },
+    {
+        "id": 69,
+        "product": "Кваніл розч 100мг/1мл",
+        "type": "insert",
+        "artwork": "QL-02"
+    },
+    {
+        "id": 70,
+        "product": "Кваніл розч 100мг/1мл (Казахстан)",
+        "type": "insert",
+        "artwork": "QLKZ-01"
+    },
+    {
+        "id": 71,
+        "product": "Кваніл розч 100мг/1мл (Молдова)",
+        "type": "insert",
+        "artwork": "QLMD-01"
+    },
+    {
+        "id": 72,
+        "product": "Озалекс таб 10мг 20мг, 40мг  ",
+        "type": "insert",
+        "artwork": "OS-02",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 8000
+    },
+    {
+        "id": 73,
+        "product": "Атовакс таб 400мг ",
+        "type": "insert",
+        "artwork": "АХ-03"
+    },
+    {
+        "id": 74,
+        "product": "Статорем-Н таб 20мг/12,5мг",
+        "type": "insert",
+        "artwork": "SMHT-03",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 4200
+    },
+    {
+        "id": 75,
+        "product": "Статорем-Н таб 10мг/12,5мг, 20мг/25мг",
+        "type": "insert",
+        "artwork": "SRMH-01"
+    },
+    {
+        "id": 76,
+        "product": "Тиурекс таб 12,5мг 25мг 50мг",
+        "type": "insert",
+        "artwork": "TRX-03",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 61200
+    },
+    {
+        "id": 77,
+        "product": "Суспрін таб 4мг 8мг",
+        "type": "insert",
+        "artwork": "SPN-01",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 21000
+    },
+    {
+        "id": 78,
+        "product": "Логуфен розчин 100мг/мл 200мл",
+        "type": "insert",
+        "artwork": "LGN-01"
+    },
+    {
+        "id": 79,
+        "product": "Вінітел сироп 200мг/5мл",
+        "type": "insert",
+        "artwork": "VNL-02"
+    },
+    {
+        "id": 80,
+        "product": "Суспрін розч 4мг/5мл",
+        "type": "insert",
+        "artwork": "SNS-02"
+    },
+    {
+        "id": 81,
+        "product": "Фаніган таб ",
+        "type": "insert",
+        "artwork": "FGN-01"
+    },
+    {
+        "id": 82,
+        "product": "Німід таб 100мг",
+        "type": "insert",
+        "artwork": "ND-02",
+        "deliveryBy": "12 Apr 2024",
+        "apr2024": 54000
+    },
+    {
+        "id": 83,
+        "product": "Мезакар сусп 100мг/5мл",
+        "type": "insert",
+        "artwork": "MZR-02"
+    },
+    {
+        "id": 84,
+        "product": "Мезакар сусп 100мг/5мл (Молдова)",
+        "type": "insert",
+        "artwork": "MZRMD-01"
+    },
+    {
+        "id": 85,
+        "product": "Денігма розч 2мг/мл",
+        "type": "insert",
+        "artwork": "DNGA-01"
+    },
+    {
+        "id": 86,
+        "product": "Росемід розч 30мл 100 мл",
+        "type": "insert",
+        "artwork": "RD-01"
+    },
+    {
+        "id": 87,
+        "product": "Мейберіз сироп 20 мг/мл",
+        "type": "insert"
     }
 ]
