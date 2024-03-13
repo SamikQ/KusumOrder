@@ -8,13 +8,13 @@
     {
         "id": 2,
         "product": "Аброл сироп 15мг/5мл",
-        "type": "insert",
+        "type": "carton",
         "artwork": "AL-02"
     },
     {
         "id": 3,
         "product": "Аброл сироп 15мг/5мл (Молдова)",
-        "type": "insert"
+        "type": "label"
     },
     {
         "id": 4,
@@ -57,7 +57,7 @@
     {
         "id": 11,
         "product": "Баратон таб 5мг 10мг",
-        "type": "insert",
+        "type": "label",
         "artwork": "BNT-01",
         "deliveryBy": "12 Apr 2024",
         "apr2024": 31200
@@ -70,7 +70,7 @@
     {
         "id": 13,
         "product": "L-Цет сироп 2,5мг/5мл",
-        "type": "insert",
+        "type": "carton",
         "artwork": "LCT-02",
         "deliveryBy": "12 Apr 2024",
         "apr2024": 54600

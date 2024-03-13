@@ -1,19 +1,60 @@
 import { Component } from "react";
-import OrderListItem from "../order-list-item/order-list-item";
+import OrderListItem from "../order-list-item/Order-list-item";
+import products from "../data/data.json";
 
 class OrderList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: null,
       type: "",
       month: "",
     };
   }
 
-  render() {
-    const { data } = this.props;
-    return <OrderListView data={data} />;
+  onSelectedType = (e) => {
+    const type = e.target.value;
+    const data = products.filter((item) => item.type === type);
+    this.setState({
+      data,
+      type
+    });
+  };
+
+  getFilteredData = () => {
+    const { data, type } = this.state;
+    return data.filter((item) => item.type === type);
   }
+
+  render() {
+    const { data, type } = this.state;
+    const content = !(!data) ? <OrderListView data={data} type={type} /> : null;
+    return <>
+      <SelectedType data={data} onSelectedType={this.onSelectedType} />
+      {content}
+    </>;
+  }
+}
+
+const SelectedType = ({ onSelectedType }) => {
+  const options = [
+    { value: 'carton', label: 'Пачка' },
+    { value: 'insert', label: 'Інструкція' },
+    { value: 'label', label: 'Етикетка' }
+  ]
+  return (
+    <form>
+      <label htmlFor={options}>Оберіть категорію:</label>
+      <select onChange={onSelectedType}>
+        <option value={options[0].value}>-- Оберіть --</option>
+        {options.map((item) => (
+          <option key={item.value} value={item.value}>
+            {item.label}
+          </option>
+        ))}
+      </select>
+    </form>
+  );
 }
 
 const OrderListView = ({ data }) => {
@@ -24,7 +65,7 @@ const OrderListView = ({ data }) => {
       const { id, ...itemProps } = item;
       return <OrderListItem key={id} index={counter++} {...itemProps} />; // Використовуємо лічильник тут
     }
-    return null; // Не відображаємо порожні елементи
+    return null;
   });
 
   return (

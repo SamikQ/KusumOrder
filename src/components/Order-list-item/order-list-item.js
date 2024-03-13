@@ -1,11 +1,11 @@
 const OrderListItem = ({
-  index,
   id,
   product,
   type,
   artwork,
   apr2024,
   deliveryBy,
+  index
 }) => {
   if (apr2024 > 0) {
     return (
