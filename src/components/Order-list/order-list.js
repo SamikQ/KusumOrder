@@ -21,16 +21,17 @@ class OrderList extends Component {
     });
   };
 
-  getFilteredData = () => {
-    const { data, type } = this.state;
-    return data.filter((item) => item.type === type);
-  }
+  handleDataChange = () => {
+    const filteredData = this.state.data;
+    this.props.onDataChange(filteredData);
+  };
 
   render() {
     const { data, type } = this.state;
     const content = !(!data) ? <OrderListView data={data} type={type} /> : null;
     return <>
       <SelectedType data={data} onSelectedType={this.onSelectedType} />
+      <button onClick={this.handleDataChange}>Відправити дані</button>
       {content}
     </>;
   }
