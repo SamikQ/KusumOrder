@@ -1,6 +1,7 @@
 import { Component } from "react";
 import OrderListItem from "../order-list-item/Order-list-item";
 import products from "../data/data.json";
+import { usePDF } from "react-to-pdf";
 
 class OrderList extends Component {
   constructor(props) {
@@ -17,31 +18,34 @@ class OrderList extends Component {
     const data = products.filter((item) => item.type === type);
     this.setState({
       data,
-      type
+      type,
     });
   };
 
   getFilteredData = () => {
     const { data, type } = this.state;
     return data.filter((item) => item.type === type);
-  }
+  };
 
   render() {
     const { data, type } = this.state;
-    const content = !(!data) ? <OrderListView data={data} type={type} /> : null;
-    return <>
-      <SelectedType data={data} onSelectedType={this.onSelectedType} />
-      {content}
-    </>;
+    const content = !!data ? <OrderListView data={data} type={type} /> : null;
+    return (
+      <>
+        <SelectedType data={data} onSelectedType={this.onSelectedType} />
+        {content}
+        <ConvertToPdf/>
+      </>
+    );
   }
 }
 
 const SelectedType = ({ onSelectedType }) => {
   const options = [
-    { value: 'carton', label: 'Пачка' },
-    { value: 'insert', label: 'Інструкція' },
-    { value: 'label', label: 'Етикетка' }
-  ]
+    { value: "carton", label: "Пачка" },
+    { value: "insert", label: "Інструкція" },
+    { value: "label", label: "Етикетка" },
+  ];
   return (
     <form>
       <label htmlFor={options}>Оберіть категорію:</label>
@@ -55,7 +59,19 @@ const SelectedType = ({ onSelectedType }) => {
       </select>
     </form>
   );
-}
+};
+
+const ConvertToPdf = () => {
+  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
+  return (
+    <div>
+      <button onClick={() => toPDF()}>Download PDF</button>
+      <div ref={targetRef}>
+        
+      </div>
+    </div>
+  );
+};
 
 const OrderListView = ({ data }) => {
   let counter = 1; // Лічильник для відстеження реальних елементів
