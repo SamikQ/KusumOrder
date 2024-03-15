@@ -1,7 +1,7 @@
 import { Component } from "react";
 import OrderListItem from "../order-list-item/Order-list-item";
 import products from "../data/data.json";
-import { usePDF } from "react-to-pdf";
+
 
 class OrderList extends Component {
   constructor(props) {
@@ -62,15 +62,7 @@ const SelectedType = ({ onSelectedType }) => {
 };
 
 const ConvertToPdf = () => {
-  const { toPDF, targetRef } = usePDF({ filename: "page.pdf" });
-  return (
-    <div>
-      <button onClick={() => toPDF()}>Download PDF</button>
-      <div ref={targetRef}>
-        
-      </div>
-    </div>
-  );
+
 };
 
 const OrderListView = ({ data }) => {
