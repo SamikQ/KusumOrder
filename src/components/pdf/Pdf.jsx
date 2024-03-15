@@ -4,7 +4,7 @@ import html2canvas from "html2canvas";
 import OrderList from "../order-list/Order-list";
 
 
-export default function PDF() {
+export default function PDF({ selectedData }) {
     const pdfRef = useRef();
     const downloadPDF = () => {
         const input = pdfRef.current;
@@ -37,11 +37,13 @@ export default function PDF() {
             pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
             pdf.save('order.pdf');
         });
+
+
     }
     return (
         <>
             <div ref={pdfRef}>
-                <OrderList />
+                {selectedData}
             </div>
             <div>
                 <button onClick={downloadPDF}>Створити</button>
@@ -49,3 +51,4 @@ export default function PDF() {
         </>
     )
 }
+

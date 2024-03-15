@@ -1,7 +1,7 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
 import OrderListItem from "../order-list-item/Order-list-item";
 import products from "../data/data.json";
-
 
 class OrderList extends Component {
   constructor(props) {
@@ -15,10 +15,16 @@ class OrderList extends Component {
 
   onSelectedType = (e) => {
     const type = e.target.value;
-    const data = products.filter((item) => item.type === type);
+    this.renderData(type);
+    this.setState({
+      type,
+    });
+  };
+
+  renderData = (category) => {
+    const data = products.filter((item) => item.type === category);
     this.setState({
       data,
-      type,
     });
   };
 
@@ -29,12 +35,14 @@ class OrderList extends Component {
 
   render() {
     const { data, type } = this.state;
-    const content = !!data ? <OrderListView data={data} type={type} /> : null;
+    // const content = !!data ? <OrderListView data={data} type={type} /> : null;
     return (
       <>
-        <SelectedType data={data} onSelectedType={this.onSelectedType} />
-        {content}
-        <ConvertToPdf/>
+        <div>
+          <SelectedType data={data} onSelectedType={this.onSelectedType} />
+        </div>
+        <button onClick={() => this.props.onDataSelected(data)}>Submit</button>
+        {/* {content} */}
       </>
     );
   }
@@ -61,35 +69,35 @@ const SelectedType = ({ onSelectedType }) => {
   );
 };
 
-const ConvertToPdf = () => {
+// const OrderListView = ({ data }) => {
+//   let counter = 1; // Лічильник для відстеження реальних елементів
+//   const elements = data.map((item) => {
+//     if (item.apr2024 > 0) {
+//       // Перевірка на наявність значення
+//       const { id, ...itemProps } = item;
+//       return <OrderListItem key={id} index={counter++} {...itemProps} />; // Використовуємо лічильник тут
+//     }
+//     return null;
+//   });
 
-};
+//   return (
+//     <table className="order-list">
+//       <thead className="order-list-header">
+//         <tr>
+//           <th className="list-group-item-label">№</th>
+//           <th className="list-group-item-label">Product</th>
+//           <th className="list-group-item-artwork">Artwork</th>
+//           <th className="list-group-item-quantity">Quantity, pcs</th>
+//           <th className="list-group-item-delivery">Delivery date</th>
+//         </tr>
+//       </thead>
+//       <tbody>{elements}</tbody>
+//     </table>
+//   );
+// };
 
-const OrderListView = ({ data }) => {
-  let counter = 1; // Лічильник для відстеження реальних елементів
-  const elements = data.map((item) => {
-    if (item.apr2024 > 0) {
-      // Перевірка на наявність значення
-      const { id, ...itemProps } = item;
-      return <OrderListItem key={id} index={counter++} {...itemProps} />; // Використовуємо лічильник тут
-    }
-    return null;
-  });
-
-  return (
-    <table className="order-list">
-      <thead className="order-list-header">
-        <tr>
-          <th className="list-group-item-label">№</th>
-          <th className="list-group-item-label">Product</th>
-          <th className="list-group-item-artwork">Artwork</th>
-          <th className="list-group-item-quantity">Quantity, pcs</th>
-          <th className="list-group-item-delivery">Delivery date</th>
-        </tr>
-      </thead>
-      <tbody>{elements}</tbody>
-    </table>
-  );
+OrderList.propTypes = {
+  onDataSelected: PropTypes.func.isRequired,
 };
 
 export default OrderList;

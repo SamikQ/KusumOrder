@@ -8,15 +8,25 @@ import OrderApproval from "../order-approval/OrderApproval";
 import PDF from "../pdf/Pdf";
 
 class App extends Component {
+  state = {
+    selectedData: null,
+  };
+
+  onDataSelected = (data) => {
+    this.setState({
+      selectedData: data,
+    });
+  };
+
   render() {
     return (
       <div className="wrapper">
-        <PDF/>
         <Header />
         <div className="page">
           <OrderInform />
-          <OrderList />
+          <OrderList onDataSelected={this.onDataSelected} />
           <OrderApproval />
+          <PDF selectedData={this.state.selectedData} />
         </div>
         <Footer />
       </div>
