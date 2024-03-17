@@ -1,12 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
-import OrderList from "../order-list/Order-list";
 
-
-export default function PDF({ selectedData }) {
+export default function PDF(props) {
+    const [showPDFContent, setShowPDFContent] = useState(false);
     const pdfRef = useRef();
     const downloadPDF = () => {
+        setShowPDFContent(true);
+        setShowPDFContent(false);
         const input = pdfRef.current;
         html2canvas(input, {
             scale: 3,
@@ -21,34 +22,46 @@ export default function PDF({ selectedData }) {
             const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
             const imgX = (pdfWidth - imgWidth * ratio) / 2;
             const imgY = 30;
-
-            // const itemsPerPage = 10; // Вкажіть кількість елементів на сторінці
-            // const pages = [];
-            // for (let i = 0; i < items.length; i += itemsPerPage) {
-            //     pages.push(items.slice(i, i + itemsPerPage));
-            // }
-
-            // pages.forEach((page, index) => {
-            //     pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-            //     if (index < pages.length - 1) {
-            //         pdf.addPage();
-            //     }
-            // });
             pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
             pdf.save('order.pdf');
         });
-
-
     }
+
+    const { selectedData } = props;
+    console.log(selectedData.length);
     return (
         <>
-            <div ref={pdfRef}>
-                {selectedData}
-            </div>
+            {showPDFContent && (
+                <div ref={pdfRef}>
+                    <table className="order-list">
+                        <thead className="order-list-header">
+                            <tr>
+                                <th className="list-group-item-label">№</th>
+                                <th className="list-group-item-label">Product</th>
+                                <th className="list-group-item-artwork">Artwork</th>
+                                <th className="list-group-item-quantity">Quantity, pcs</th>
+                                <th className="list-group-item-delivery">Delivery date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {selectedData.map((item, index) => (
+                                <tr className="list-group-table" key={item.id}>
+                                    <td className="list-group-item">{index+1}</td>
+                                    <td className="list-group-product">
+                                        {item.type}: {item.product}
+                                    </td>
+                                    <td className="list-group-item">{item.artwork}</td>
+                                    <td className="list-group-item">{item.apr2024}</td>
+                                    <td className="list-group-item">{item.deliveryBy}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
             <div>
                 <button onClick={downloadPDF}>Створити</button>
             </div>
         </>
     )
 }
-

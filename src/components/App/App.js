@@ -19,6 +19,7 @@ class App extends Component {
   };
 
   render() {
+    const { selectedData } = this.state;
     return (
       <div className="wrapper">
         <Header />
@@ -26,7 +27,7 @@ class App extends Component {
           <OrderInform />
           <OrderList onDataSelected={this.onDataSelected} />
           <OrderApproval />
-          <PDF selectedData={this.state.selectedData} />
+          {selectedData && <PDF selectedData={selectedData} />}
         </div>
         <Footer />
       </div>

@@ -7,7 +7,7 @@ class OrderList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null,
+      data: [],
       type: "",
       month: "",
     };
@@ -15,26 +15,29 @@ class OrderList extends Component {
 
   onSelectedType = (e) => {
     const type = e.target.value;
-    this.renderData(type);
+    const data = products.filter((item) => item.type === type);
+    console.log(Array.isArray(data));
     this.setState({
-      type,
+      data: data
     });
   };
 
-  renderData = (category) => {
-    const data = products.filter((item) => item.type === category);
-    this.setState({
-      data,
-    });
-  };
+  // renderData = (category) => {
+  //   const data = products.filter((item) => item.type === category);
+  //   console.log(data);
+  //   this.setState({
+  //     data,
+  //   });
+  // };
 
   getFilteredData = () => {
     const { data, type } = this.state;
-    return data.filter((item) => item.type === type);
+    const filtredData = data.filter((item) => item.type === type ? item : null)
+    return filtredData;
   };
 
   render() {
-    const { data, type } = this.state;
+    const { data } = this.state;
     // const content = !!data ? <OrderListView data={data} type={type} /> : null;
     return (
       <>
