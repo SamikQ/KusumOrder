@@ -6,6 +6,7 @@ import OrderInform from "../order-information/Order-information";
 import OrderList from "../order-list/Order-list";
 import OrderApproval from "../order-approval/OrderApproval";
 import PDF from "../pdf/Pdf";
+import CreatePDF from "../pdf/Pdf";
 
 class App extends Component {
   state = {
@@ -29,6 +30,7 @@ class App extends Component {
           <OrderApproval />
           {selectedData && <PDF selectedData={selectedData} />}
         </div>
+        <button onClick={CreatePDF}>Click!</button>
         <Footer />
       </div>
     );
