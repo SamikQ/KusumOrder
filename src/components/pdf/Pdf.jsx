@@ -1,54 +1,82 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
-import OrderList from "../order-list/Order-list";
 
+export default function PDF(props) {
+    const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
-export default function PDF({ selectedData }) {
-    const pdfRef = useRef();
-    const downloadPDF = () => {
-        const input = pdfRef.current;
-        html2canvas(input, {
-            scale: 3,
-            letterRendering: true,
-        }).then((canvas) => {
-            const imgData = canvas.toDataURL('image/webp', 1.0);
-            const pdf = new jsPDF('p', 'mm', 'a4', true);
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = pdf.internal.pageSize.getHeight();
-            const imgWidth = canvas.width;
-            const imgHeight = canvas.height;
-            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-            const imgX = (pdfWidth - imgWidth * ratio) / 2;
-            const imgY = 30;
+    const downloadPDF = async () => {
+        setIsGeneratingPDF(true);
 
-            // const itemsPerPage = 10; // Вкажіть кількість елементів на сторінці
-            // const pages = [];
-            // for (let i = 0; i < items.length; i += itemsPerPage) {
-            //     pages.push(items.slice(i, i + itemsPerPage));
-            // }
+        try {
+            const { selectedData } = props;
+            const pdf = new jsPDF();
+            let y = 15;
+            let currentPage = 1;
 
-            // pages.forEach((page, index) => {
-            //     pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-            //     if (index < pages.length - 1) {
-            //         pdf.addPage();
-            //     }
-            // });
-            pdf.addImage(imgData, 'PNG', imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-            pdf.save('order.pdf');
-        });
+            const addPageWithFooter = () => {
+                pdf.addPage();
+                pdf.text(`Page ${currentPage}`, 15, 280);
+                currentPage++;
+                y = 15; // Reset y position for the new page
+            };
 
+            selectedData.forEach((item, index) => {
+                if (y > 260) { // Check if text exceeds the bottom margin of the page
+                    addPageWithFooter();
+                }
 
-    }
+                pdf.text(`#${index + 1}`, 15, y);
+                pdf.text(`Product: ${item.product}`, 30, y + 5, { encoding: 'UTF-8' });
+                pdf.text(`Type: ${item.type}`, 30, y + 10, { encoding: 'UTF-8' });
+                pdf.text(`Artwork: ${item.artwork}`, 30, y + 15, { encoding: 'UTF-8' });
+                y += 25;
+            });
+
+            // Add footer to the last page
+            pdf.text(`Page ${currentPage}`, 15, 280);
+
+            pdf.save(`order_page${currentPage}.pdf`);
+        } catch (error) {
+            console.error('Помилка генерації PDF:', error);
+        } finally {
+            setIsGeneratingPDF(false);
+        }
+    };
+
+    const { selectedData } = props;
+
     return (
         <>
-            <div ref={pdfRef}>
-                {selectedData}
+            <div>
+                <table className="order-list">
+                    <thead className="order-list-header">
+                        <tr>
+                            <th className="list-group-item-label">№</th>
+                            <th className="list-group-item-label">Product</th>
+                            <th className="list-group-item-type">Type</th>
+                            <th className="list-group-item-artwork">Artwork</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {selectedData && selectedData.map((item, index) => (
+                            <tr className="list-group-table" key={item.id}>
+                                <td className="list-group-item">{index + 1}</td>
+                                <td className="list-group-product">
+                                    {item.type}: {item.product}
+                                </td>
+                                <td className="list-group-item">{item.artwork}</td>
+                                <td className="list-group-item">{item.apr2024}</td>
+                                <td className="list-group-item">{item.deliveryBy}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
             </div>
             <div>
-                <button onClick={downloadPDF}>Створити</button>
+                <button onClick={downloadPDF} disabled={isGeneratingPDF}>
+                    {isGeneratingPDF ? 'Генерується PDF...' : 'Завантажити PDF'}
+                </button>
             </div>
         </>
     )
 }
-
