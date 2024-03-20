@@ -1,4 +1,9 @@
+import React from "react";
+
+const footerRef = React.createRef();
+
 const Footer = () => {
+
   const contactsData = [
     {
       name: "GladPharm LTD",
@@ -29,11 +34,15 @@ const Footer = () => {
     );
   });
 
+  var footerElement = <footer id="footer" ref={footerRef}>
+    <div className="footer-contacts">{contacts}</div>
+    <div className="footer-copyrights">All rights reserved 2024 &copy;.</div>
+  </footer>
+
   return (
-    <div className="footer">
-      <div className="footer-contacts">{contacts}</div>
-      <div className="footer-copyrights">All rights reserved 2024 &copy;.</div>
-    </div>
+    <>
+      {footerElement}
+    </>
   );
 };
 

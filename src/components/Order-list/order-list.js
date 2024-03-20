@@ -44,7 +44,7 @@ class OrderList extends Component {
         <div>
           <SelectedType data={data} onSelectedType={this.onSelectedType} />
         </div>
-        <button onClick={() => this.props.onDataSelected(data)}>Submit</button>
+        <button>Submit</button>
         {/* {content} */}
       </>
     );

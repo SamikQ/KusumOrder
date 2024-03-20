@@ -3,18 +3,21 @@
         "id": 1,
         "product": "Аброл SR капс 75мг",
         "type": "label",
-        "artwork": "ALSRC-01"
+        "artwork": "ALSRC-01",
+        "month": "april"
     },
     {
         "id": 2,
         "product": "Аброл сироп 15мг/5мл",
         "type": "carton",
-        "artwork": "AL-02"
+        "artwork": "AL-02",
+        "month": "april"
     },
     {
         "id": 3,
         "product": "Аброл сироп 15мг/5мл (Молдова)",
-        "type": "insert"
+        "type": "insert",
+        "month": "april"
     },
     {
         "id": 4,

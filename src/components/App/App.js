@@ -3,36 +3,45 @@ import "./App.scss";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import OrderInform from "../order-information/Order-information";
-import OrderList from "../order-list/Order-list";
-import OrderApproval from "../order-approval/OrderApproval";
 import PDF from "../pdf/Pdf";
-import CreatePDF from "../pdf/Pdf";
 import OrderProps from "../order-props/OrderProps";
 
 class App extends Component {
   state = {
-    selectedData: null,
-  };
+    type: '',
+    month: '',
+    supplier: '',
+    order: []
+  }
 
   onDataSelected = (data) => {
+    const { type, month, supplier, order } = data;
     this.setState({
-      selectedData: data,
+      type,
+      month,
+      supplier,
+      order
     });
   };
 
+  // onSelectedType = (e) => {
+  //   const { type, month } = this.state;
+  //   const order = products.filter((item) => item.type === type && item.month === month);
+  //   console.log(Array.isArray(order));
+  //   this.setState({
+  //     order
+  //   });
+  // };
+
   render() {
-    const { selectedData } = this.state;
     return (
       <div className="wrapper">
         <Header />
-        <OrderProps />
+        <OrderProps onDataSelected={this.onDataSelected} />
         <div className="page">
           <OrderInform />
-          <OrderList onDataSelected={this.onDataSelected} />
-          <OrderApproval />
-          {selectedData && <PDF selectedData={selectedData} />}
         </div>
-        <button onClick={CreatePDF}>Click!</button>
+        <PDF data={this.state} />
         <Footer />
       </div>
     );

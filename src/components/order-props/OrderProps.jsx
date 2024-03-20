@@ -1,26 +1,36 @@
 import { Component } from "react";
 import Select from "react-select";
 import suppliers from '../data/suppliers.json';
-
-
+import products from "../data/data.json";
+import './OrderProps.scss';
 
 class OrderProps extends Component {
-    constructor() {
-        super();
-        this.state = {
-            type: '',
-            month: '',
-            supplier: ''
-        }
+    state = {
+        type: '',
+        month: '',
+        supplier: '',
+        order: []
     }
 
-    onHandeChange = (item) => {
-        if (item) { // Check if e is defined before accessing its value
-            const data = item.value;
-            this.setState({ selectedType: data });
-        }
-    }
+    onSelectedType = () => {
+        const { type, month } = this.state;
+        const order = products.filter((item) => item.type === type && item.month === month);
+        console.log(Array.isArray(order));
+        this.setState({
+            order
+        });
+    };
+
     render() {
+
+        const styles = {
+            option: (provided, state) => ({
+                ...provided,
+                borderBottom: '1px dotted pink',
+                color: 'black',
+            }),
+        };
+
         const type = [
             { value: "carton", label: "Пачка" },
             { value: "insert", label: "Інструкція" },
@@ -34,19 +44,23 @@ class OrderProps extends Component {
         ];
 
 
-        const suppliersList = suppliers.map((item) => {
-            const obj = {
-                value: item.id,
-                label: item.companyName
-            }
-        });
+        const suppliersList = suppliers.map((item) => ({
+            value: item.id,
+            label: item.companyName,
+        }));
 
         return (
-            <>
-                <Select options={type} onChange={(type) => this.setState({ type: type.value })} defaultValue={"carton"} placeholder="Оберіть тип матеріалу" />
-                <Select options={month} onChange={(month) => this.setState({ month: month.value })} defaultValue={"april"} placeholder="Оберіть місяць замовлення" />
-                <Select options={result} onChange={(supplier) => this.setState({ supplier: supplier.value })} defaultValue={"s1"} placeholder="Оберіть постачальника" />
-            </>
+            <div className="select__prop">
+                <Select options={type} onChange={(type) => this.setState({ type: type.value })} defaultValue={"carton"} placeholder="Оберіть тип матеріалу" styles={styles} />
+                <br />
+                <Select options={month} onChange={(month) => this.setState({ month: month.value })} defaultValue={"april"} placeholder="Оберіть місяць замовлення" styles={styles} />
+                <br />
+                <Select options={suppliersList} onChange={(supplier) => this.setState({ supplier: supplier.value })} defaultValue={"s1"} placeholder="Оберіть постачальника" styles={styles} />
+                <br />
+                <button onClick={this.onSelectedType} className="fill">Submit filter</button>
+                <br />
+                <button type="submit" onClick={() => this.props.onDataSelected(this.state)} className="raise">Create order</button>
+            </div>
         )
     }
 }
