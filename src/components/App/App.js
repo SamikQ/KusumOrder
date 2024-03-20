@@ -7,6 +7,7 @@ import OrderList from "../order-list/Order-list";
 import OrderApproval from "../order-approval/OrderApproval";
 import PDF from "../pdf/Pdf";
 import CreatePDF from "../pdf/Pdf";
+import OrderProps from "../order-props/OrderProps";
 
 class App extends Component {
   state = {
@@ -24,6 +25,7 @@ class App extends Component {
     return (
       <div className="wrapper">
         <Header />
+        <OrderProps />
         <div className="page">
           <OrderInform />
           <OrderList onDataSelected={this.onDataSelected} />
