@@ -6,6 +6,7 @@ import OrderInform from "../order-information/Order-information";
 import OrderList from "../order-list/Order-list";
 import OrderApproval from "../order-approval/OrderApproval";
 import PDF from "../pdf/Pdf";
+import CreatePDF from "../pdf/Pdf";
 
 class App extends Component {
   state = {
@@ -19,6 +20,7 @@ class App extends Component {
   };
 
   render() {
+    const { selectedData } = this.state;
     return (
       <div className="wrapper">
         <Header />
@@ -26,8 +28,9 @@ class App extends Component {
           <OrderInform />
           <OrderList onDataSelected={this.onDataSelected} />
           <OrderApproval />
-          <PDF selectedData={this.state.selectedData} />
+          {selectedData && <PDF selectedData={selectedData} />}
         </div>
+        <button onClick={CreatePDF}>Click!</button>
         <Footer />
       </div>
     );
