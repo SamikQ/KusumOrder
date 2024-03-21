@@ -13,7 +13,7 @@ class PDF extends Component {
         super();
     }
 
-    CreatePDF = () => {
+    CreatePDF = async () => {
         const arr = this.props.data;
         console.log(arr);
         const doc = new jsPDF();
@@ -33,20 +33,26 @@ class PDF extends Component {
             }
         });
         //Footer from the body
-        const footerElement = footerRef.current;
-        doc.html(source, {
-            callback: function (doc) {
+        const footerElement = `<footer id="footer" ref={footerRef}>
+            <div className="footer-contacts">HELLO!</div>
+            <div className="footer-copyrights">All rights reserved 2024 &copy;.</div>
+        </footer>`;
+
+        await doc.html(footerElement, {
+            callback: function () {
                 doc.output();
             },
-            x: 10,
-            y: 10
+            'x': 15,
+            'y': 15,
+            'width': 200,
         });
+
         doc.save("a4.pdf");
     };
 
     render() {
         return (
-            <div><button onClick={this.CreatePDF}>Click!</button></div>
+            <div><button onClick={this.CreatePDF} className="fill">Click!</button></div>
         )
     }
 
