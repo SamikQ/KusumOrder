@@ -1,6 +1,20 @@
 import React from "react";
 
 const Footer = () => {
+  const styles = {
+    footer: {
+      position: "fixed",
+      bottom: "0",
+      width: "100%",
+      textAlign: "center",
+      marginTop: "auto",
+    },
+    contacts: {
+      display: "flex",
+      justifycontent: "space-around",
+      marginBotton: 0,
+    },
+  };
   const contactsData = [
     {
       name: "GladPharm LTD",
@@ -34,8 +48,8 @@ const Footer = () => {
   const footerRef = React.createRef();
 
   var footerElement = (
-    <footer id="footer" ref={footerRef}>
-      <div className="footer-contacts">{contacts}</div>
+    <footer style={styles.footer}>
+      <div style={styles.contacts}>{contacts}</div>
       <div className="footer-copyrights">All rights reserved 2024 &copy;.</div>
     </footer>
   );

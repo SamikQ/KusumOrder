@@ -8,11 +8,11 @@ import OrderProps from "../order-props/OrderProps";
 
 class App extends Component {
   state = {
-    type: '',
-    month: '',
-    supplier: '',
-    order: []
-  }
+    type: "",
+    month: "",
+    supplier: "",
+    order: [],
+  };
 
   onDataSelected = (data) => {
     const { type, month, supplier, order } = data;
@@ -20,7 +20,7 @@ class App extends Component {
       type,
       month,
       supplier,
-      order
+      order,
     });
   };
 
@@ -42,7 +42,6 @@ class App extends Component {
           <OrderInform />
         </div>
         <PDF data={this.state} />
-        <Footer />
       </div>
     );
   }
