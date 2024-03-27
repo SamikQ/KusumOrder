@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   const styles = {
     footer: {
+      fontSize: "50",
       position: "fixed",
       bottom: "0",
       width: "100%",
@@ -44,8 +45,6 @@ const Footer = () => {
       </div>
     );
   });
-
-  const footerRef = React.createRef();
 
   var footerElement = (
     <footer style={styles.footer}>

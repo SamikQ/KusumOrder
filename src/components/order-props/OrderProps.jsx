@@ -14,7 +14,7 @@ class OrderProps extends Component {
 
     onSelectedType = () => {
         const { type, month } = this.state;
-        const order = products.filter((item) => item.type === type && item.month === month);
+        const order = products.filter((item) => item.type === type && item.month === month && item.quantity > 0);
         console.log(Array.isArray(order));
         this.setState({
             order
