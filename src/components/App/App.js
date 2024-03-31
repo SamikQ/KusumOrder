@@ -1,7 +1,6 @@
 import { Component } from "react";
 import "./App.scss";
 import Header from "../header/Header";
-import Footer from "../footer/Footer";
 import OrderInform from "../order-information/Order-information";
 import PDF from "../pdf/Pdf";
 import OrderProps from "../order-props/OrderProps";
@@ -23,15 +22,6 @@ class App extends Component {
       order,
     });
   };
-
-  // onSelectedType = (e) => {
-  //   const { type, month } = this.state;
-  //   const order = products.filter((item) => item.type === type && item.month === month);
-  //   console.log(Array.isArray(order));
-  //   this.setState({
-  //     order
-  //   });
-  // };
 
   render() {
     return (

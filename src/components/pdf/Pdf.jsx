@@ -5,15 +5,10 @@ import './fonts/Sana-normal';
 import { Component } from "react";
 import logo from '../header/img/logo-header.png'
 
-
-var examples = {}
-window.examples = examples
-
 class PDF extends Component {
     constructor(props) {
         super();
     }
-    footerTemplate = React.createRef();
 
     CreatePDF = async () => {
         const arr = this.props.data;
@@ -79,9 +74,7 @@ class PDF extends Component {
 
     render() {
         return (
-            <>
-                <div><button onClick={this.CreatePDF} className="fill">Click!</button></div>
-            </>
+            <div><button onClick={this.CreatePDF} className="fill">Click!</button></div>
         )
     }
 

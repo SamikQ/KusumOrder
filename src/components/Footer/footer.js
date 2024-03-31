@@ -46,7 +46,7 @@ const Footer = () => {
     );
   });
 
-  var footerElement = (
+  let footerElement = (
     <footer style={styles.footer}>
       <div style={styles.contacts}>{contacts}</div>
       <div className="footer-copyrights">All rights reserved 2024 &copy;.</div>
