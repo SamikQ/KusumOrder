@@ -1,5 +1,4 @@
 import { Component } from "react";
-import PropTypes from "prop-types";
 import products from "../data/data.json";
 
 class OrderList extends Component {
@@ -53,10 +52,6 @@ const SelectedType = ({ onSelectedType }) => {
       </select>
     </form>
   );
-};
-
-OrderList.propTypes = {
-  onDataSelected: PropTypes.func.isRequired,
 };
 
 export default OrderList;

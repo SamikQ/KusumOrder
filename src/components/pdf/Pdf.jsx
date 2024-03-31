@@ -1,8 +1,7 @@
 import jsPDF from "jspdf";
-import React from "react";
+import React, { Component } from "react";
 import autoTable from 'jspdf-autotable';
 import './fonts/Sana-normal';
-import { Component } from "react";
 import logo from '../header/img/logo-header.png'
 
 class PDF extends Component {
